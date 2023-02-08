@@ -34,8 +34,9 @@ public class EventController {
     }
 
     @PostMapping("create")
-    public String processCreateEventForm(@RequestParam String eventName) {
-        events.add(new Events(eventName));
+    public String processCreateEventForm(@RequestParam String eventName,
+                                         @RequestParam String eventDescription) {
+        events.add(new Events(eventName, eventDescription));
         return "redirect:";
     }
 
